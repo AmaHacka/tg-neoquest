@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telegram Friends</title>
+    <link rel="stylesheet" type="text/css" href="/static/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <ul>
+                {% for id, user in users.items() %}
+                <li class="user list-group-item list-group-item-action" data-id="{{user.user_id}}"> {{user.name}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div id="tg-data" class="col-lg-8">
+            <canvas id="onlineChart" width="100%" height="100%">
+
+            </canvas>
+        </div>
+    </div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="http://momentjs.com/downloads/moment.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script src="/static/plotter.js"></script>
+</html>
